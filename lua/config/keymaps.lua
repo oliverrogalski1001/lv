@@ -4,30 +4,23 @@
 
 local wk = require("which-key")
 
--- disable keymaps
+wk.add({
+  mode = { "i" },
+  { "<C-b>", "<ESC>^i", desc = "Beginning of line" },
+  { "<C-e>", "<End>", desc = "End of line" },
+  { "<C-h>", "<Left>", desc = "Move left" },
+  { "<C-j>", "<Down>", desc = "Move down" },
+  { "<C-k>", "<Up>", desc = "Move up" },
+  { "<C-l>", "<Right>", desc = "Move right" },
+})
 
-local mappings_i = {
-  ["<C-b>"] = { "<ESC>^i", "Beginning of line" },
-  ["<C-e>"] = { "<End>", "End of line" },
+wk.add({
+  { "<leader>S", "<cmd>wa!<cr>", desc = "Save All Files" },
+  { "<leader>r", "<cmd>RunCode<CR>", desc = "run code" },
+})
+-- { "<leader>x", "<cmd>bp<bar>sp<bar>bn<bar>bd<CR>", desc = "close buffer" },
+-- { "<leader>s", "<cmd>w!<cr>", desc = "Save File" },
 
-  -- navigate within insert mode
-  ["<C-h>"] = { "<Left>", "Move left" },
-  ["<C-l>"] = { "<Right>", "Move right" },
-  ["<C-j>"] = { "<Down>", "Move down" },
-  ["<C-k>"] = { "<Up>", "Move up" },
-}
-
-local mappings_n = {
-  ["<leader>s"] = { "<cmd>w!<cr>", "Save File" },
-  ["<leader>S"] = { "<cmd>wa!<cr>", "Save All Files" },
-  ["<leader>r"] = { "<cmd>RunCode<CR>", "run code" },
-  ["<leader>x"] = { "<cmd>bp<bar>sp<bar>bn<bar>bd<CR>", "close buffer" },
-}
-
-local term_mappings = {
-  ["<C-;>"] = { "<cmd>ToggleTerm<CR>", "toggle term" },
-}
-
-wk.register(mappings_i, { mode = "i" })
-wk.register(mappings_n, { mode = "n" })
-wk.register(term_mappings, { mode = { "n", "i", "t" } })
+wk.add({
+  { "<C-;>", "<cmd>ToggleTerm<CR>", desc = "toggle term", mode = { "i", "n", "t" } },
+})
