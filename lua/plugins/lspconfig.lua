@@ -10,6 +10,11 @@ return {
     keys[#keys + 1] = { "<cr>", false, mode = "i" }
   end,
   opts = {
+    servers = {
+      clangd = {
+        filetypes = { "c", "cpp" },
+      },
+    },
     capabilities = {
       workspace = {
         didChangeWatchedFiles = {
