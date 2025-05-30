@@ -20,7 +20,3 @@ wk.add({
 })
 -- { "<leader>x", "<cmd>bp<bar>sp<bar>bn<bar>bd<CR>", desc = "close buffer" },
 -- { "<leader>s", "<cmd>w!<cr>", desc = "Save File" },
-
-wk.add({
-  { "<C-;>", "<cmd>ToggleTerm<CR>", desc = "toggle term", mode = { "i", "n", "t" } },
-})
